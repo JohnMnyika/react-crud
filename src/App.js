@@ -36,13 +36,24 @@ function UserList() {
     };
 
     return (
-        <div className="crud">
-            <h1 className="h1">User List</h1>
-            <ul>
+        <div>
+            <h1>User List</h1>
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
                 {users.map(user => (
-                    <li key={user.id}>{user.name} - {user.email}</li>
+                    <tr key={user.id}>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                    </tr>
                 ))}
-            </ul>
+                </tbody>
+            </table>
 
             <h2>Add New User</h2>
             <input
